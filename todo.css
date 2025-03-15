@@ -49,6 +49,7 @@ form {
         font-size: 16pt;
         padding: 0 10px;
         border: none;
+        border-radius: 0;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
         padding-inline: 20px;

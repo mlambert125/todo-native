@@ -19,7 +19,7 @@
 body,
 input,
 button {
-    font-size: 32pt;
+    font-size: 16pt;
 }
 
 body {
@@ -36,26 +36,23 @@ body {
 }
 
 h1 {
-    font-weight: 900;
-    font-size: 64pt;
     color: var(--heading-color);
-    /*text-shadow: 5px 5px 5px var(--foreground);*/
 }
 
 form {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    width: 600px;
+    width: min(100%, 600px);
 
     input {
         height: 80px;
-        font-size: 32pt;
+        font-size: 16pt;
         padding: 0 10px;
         border: none;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
         padding-inline: 20px;
-        width: 400px;
+        width: 100%;
         outline: none;
     }
 
@@ -77,7 +74,7 @@ ul {
     margin: 30px;
     border: 1px solid var(--border); 
     border-radius: 10px;
-    width: 600px;
+    width: min(100%, 600px);
     background-color: var(--list-item-background-color);
 
     &:not(:has(li)) {
@@ -109,7 +106,8 @@ ul {
         }
 
         button {
-            font-size: 18pt;
+            font-size: 16pt;
+            font-weight: bold;
             height: 50px;
             width: 50px;
             background-color: var(--button-color);

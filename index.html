@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todo.css">
+    <script type="module">
+        import './todo.js';
+    </script>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <form>
+        <input placeholder="Enter a new todo" required>
+        <button>Add</button>
+    </form>
+    <ul>
+        <template id="todo-template">
+            <li>
+                <span></span>
+                <button>X</button>
+            </li>
+        </template>
+    </ul>
+</body>

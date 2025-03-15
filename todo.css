@@ -1,0 +1,134 @@
+* {
+    --primary : lime;
+    --foreground: #eee;
+    --background: #111;
+    --border: #ccc;
+    --heading-color: color-mix(in srgb, var(--primary) 75%, var(--background));
+    --button-color: color-mix(in srgb, var(--primary) 75%, var(--background));
+    --button-color-hover: color-mix(in srgb, var(--primary) 85%, var(--background));
+    --list-item-background-color: color-mix(in srgb, var(--foreground) 10%, var(--background));
+    --list-item-strike-color: color-mix(in srgb, var(--foreground) 20%, var(--background));
+ }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+input,
+button {
+    font-size: 32pt;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial, sans-serif;
+    color: var(--foreground);
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 64pt;
+    color: var(--heading-color);
+    /*text-shadow: 5px 5px 5px var(--foreground);*/
+}
+
+form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 600px;
+
+    input {
+        height: 80px;
+        font-size: 32pt;
+        padding: 0 10px;
+        border: none;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        padding-inline: 20px;
+        width: 400px;
+        outline: none;
+    }
+
+    button {
+        height: 80px;
+        background-color: var(--button-color);
+        color: white;
+        border: none;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px;
+    border: 1px solid var(--border); 
+    border-radius: 10px;
+    width: 600px;
+    background-color: var(--list-item-background-color);
+
+    &:not(:has(li)) {
+        border: 0;
+        background-color: transparent;
+    }
+
+    li {
+        border-bottom: 1px solid var(--border);
+        height: 80px;
+        overflow: hidden;
+        padding-inline: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        span {
+            &.done {
+                text-decoration: line-through;
+                color: var(--list-item-strike-color);
+            }
+        }
+
+        button {
+            font-size: 18pt;
+            height: 50px;
+            width: 50px;
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        height: 80px;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}

@@ -1,5 +1,5 @@
 * {
-    --primary : lime;
+    --primary: lime;
     --foreground: #eee;
     --background: #111;
     --border: #ccc;
@@ -8,7 +8,7 @@
     --button-color-hover: color-mix(in srgb, var(--primary) 85%, var(--background));
     --list-item-background-color: color-mix(in srgb, var(--foreground) 10%, var(--background));
     --list-item-strike-color: color-mix(in srgb, var(--foreground) 20%, var(--background));
- }
+}
 
 *,
 *::before,
@@ -73,7 +73,7 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 30px;
-    border: 1px solid var(--border); 
+    border: 1px solid var(--border);
     border-radius: 10px;
     width: min(100%, 600px);
     background-color: var(--list-item-background-color);

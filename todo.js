@@ -1,3 +1,8 @@
+/**
+ * JavaScript for the ToDo list application
+ */
+
+
 /** @type {HTMLInputElement} */
 const todoInput = document.querySelector('input');
 
@@ -31,7 +36,9 @@ function addTodo(event) {
 
     /** @type {HTMLLIElement} */
     const todoItem = todoTemplate.content.querySelector('li').cloneNode(true);
+    /** @type {HTMLSpanElement} */
     const span = todoItem.querySelector('span');
+    /** @type {HTMLButtonElement} */
     const button = todoItem.querySelector('button');
 
     span.textContent = todoText;
@@ -54,6 +61,7 @@ function addTodo(event) {
 function toggleTodoDone(event) {
     /** @type {HTMLSpanElement} */
     const span = event.target.closest('li').querySelector('span');
+
     span.classList.toggle('done');
     saveState();
 }
@@ -100,7 +108,6 @@ function loadState() {
     /** @type {Array<{text: string, done: boolean}>} */
     const todos = JSON.parse(localStorage.getItem('todos') || '[]');
 
-    // Clear the existing todo list
     for (const todo of todoList.querySelectorAll('li')) {
         todoList.removeChild(todo);
     }
@@ -137,7 +144,7 @@ function runAnimation(elm, animationName, duration = 0.5, reverse = false, easin
             reject(new Error('Element not found'));
         }
 
-        function animationEndHandler(event) {
+        const animationEndHandler = event => {
             if (event.animationName === animationName) {
                 elm.removeEventListener('animationend', animationEndHandler);
                 elm.style.animation = '';
